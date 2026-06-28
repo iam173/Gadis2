@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadis QS Tiktok Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .header img {
+            width: 24px;
+            height: 24px;
+        }
+        .search-bar {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            background-color: #ffe0b2;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .flash-sale {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .tahan-lama {
+            position: absolute;
+            top: 35px;
+            left: 10px;
+            background-color: #000;
+            color: #fff;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .banner h1 {
+            font-size: 24px;
+            color: #d32f2f;
+            margin-bottom: 10px;
+        }
+        .product-images {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 0 10px;
+        }
+        .product-images img {
+            width: 60px;
+            height: auto;
+        }
+        .tags {
+            display: flex;
+            background-color: #fff;
+            padding: 10px;
+            gap: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .tag {
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+        }
+        .tag1 {
+            background-color: #00bcd4;
+        }
+        .tag2 {
+            background-color: #4caf50;
+        }
+        .tag3 {
+            background-color: #ff9800;
+        }
+        .tag4 {
+            background-color: #e91e63;
+            margin-left: auto;
+        }
+        .price-section {
+            background-color: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .discount-badge {
+            background-color: #ff4081;
+            color: #fff;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .current-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff0000;
+            margin-right: 10px;
+        }
+        .original-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .price-notes {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .product-info {
+            background-color: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .power-shop {
+            color: #ff9800;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .rating span {
+            color: #ffc107;
+        }
+        .shipping {
+            background-color: #fff;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .shipping p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .shipping-note {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .shipping-discount {
+            display: flex;
+            align-items: center;
+            background-color: #e3f2fd;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            gap: 5px;
+        }
+        .shipping-discount span {
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .timer {
+            color: #ff0000;
+            font-weight: bold;
+            margin-left: auto;
+        }
+        .bottom-nav {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .nav-item img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 3px;
+        }
+        .buy-btn {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            width: 40%;
+            margin-bottom: 10px; /* Space for bottom nav */
+        }
+
+        .bottom-nav {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    border-top: 1px solid #eee;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    gap: 10px;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="https://i.supaimg.com/2dd5a784-1278-4cb3-a74c-3c82defb37f0/dce5c044-efd6-44c5-97f3-9ae8142c3ffd.jpg" alt="Back">
+        <input type="text" class="search-bar" placeholder="Gadis QS">
+        <img src="https://cdn-icons-png.flaticon.com/512/291/291643.png" alt="Share">
+        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Cart">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828818.png" alt="More">
+    </div>
+
+    <div class="slider">
+    <div class="slides">
+        <img src="https://i.supaimg.com/8d8883ae-ac11-44bf-8b32-ec2d5b440257/8115371c-4385-48f9-9edb-d20544ce45b0.png">
+        <img src="https://i.supaimg.com/8d8883ae-ac11-44bf-8b32-ec2d5b440257/71e1599b-3d82-4eb0-8a7e-4d89d17da704.jpg">
+        <img src="https://i.supaimg.com/8d8883ae-ac11-44bf-8b32-ec2d5b440257/59a74570-9dac-4aff-abdd-d748fbc42275.jpg">
+    </div>
+</div>
+
+    <!-- Tags Section -->
+    <div class="tags">
+        <div class="tag tag1">XTRA Percuma hantaran</div>
+        <div class="tag tag2">Hadiah 50K & 250K</div>
+        <div class="tag tag3">Jimat dgn bonus</div>
+        <div class="tag tag4">Sisa Kuota(125)</div>
+    </div>
+
+    <!-- Price Section -->
+    <div class="price-section">
+        <span class="discount-badge">-99%</span>
+        <span class="current-price">RM200</span>
+        <span class="original-price">RM305.00</span>
+        <div class="price-notes">
+            <span>Pakej Combo</span>
+            <span>Dapat hadiah RM50,000</span>
+            <span>+ CR-V</span>
+        </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+        <div class="power-shop">Gadis QS</div>
+        <div class="product-name">Pembelian pakej kombo 5 produk akan terus menerima hadiah wang tunai sebanyak RM50,000 serta berpeluang memperoleh sebuah unit kereta CR-V. ...</div>
+        <div class="rating">
+            <span>★</span> 4.6 (98) <span>568 terjual</span>
+        </div>
+    </div>
+
+    <!-- Shipping Section -->
+    <div class="shipping">
+        <p><strong>“Penghantaran percuma disediakan,”</strong>dan hadiah akan dihantar terus ke hadapan rumah pelanggan.</p>
+        <div class="shipping-discount">
+            <img src="https://cdn-icons-png.flaticon.com/512/205/205769.png" alt="Truck" width="18" height="18">
+            <span>“Pembelian 5 produk melayakkan anda menerima hadiah.”</span>wang tunai secara langsung
+            <span class="timer">RM50,000</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Close" width="16" height="16">
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+
+    <!-- Hadiah-->
+    <div class="nav-item" onclick="window.open('https://cacaalina78-tech.github.io/Aa/', '_self');">
+        <img src="https://cdn-icons-png.flaticon.com/512/1057/1057863.png">
+        <div>Testi</div>
+    </div>
+
+    <!-- Keranjang -->
+    <div class="nav-item" onclick="window.open('https://solima33444.github.io/Sr/', '_self');">
+        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png">
+        <div>Keranjang</div>
+    </div>
+
+    <!-- Tombol Beli -->
+    <button class="buy-btn" onclick="window.open('https://solima33444.github.io/Sr/', '_self');">
+        Beli Sekarang
+    </button>
+</div>
+</div>
+
+<!-- Premium Product Detail (TikTok Style) -->
+<style>
+.product-detail {
+    background: #fff;
+    margin-top: 10px;
+    border-top: 8px solid #f5f5f5;
+    font-size: 14px;
+}
+
+.detail-header {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.accordion {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-btn span {
+    color: #999;
+    font-size: 12px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    padding: 0 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.accordion-content p,
+.accordion-content li {
+    margin: 8px 0;
+}
+
+.accordion-content ul {
+    padding-left: 18px;
+}
+
+.active .accordion-content {
+    max-height: 500px;
+    padding-bottom: 15px;
+}
+</style>
+
+<!-- ================= RIZZON ================= -->
+<div class="product-detail">
+    <div class="detail-header">Butiran Produk 🍫 Rizzon</div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Spesifikasi Produk <span>›</span></button>
+        <div class="accordion-content">
+            <p><strong>Nama:</strong> Rizzon – Coklat Kurma & Ashwagandha</p>
+            <p><strong>Jenis:</strong> Minuman Coklat Premium</p>
+            <p><strong>Isi:</strong> 25 Sachet x 25g</p>
+            <p><strong>Kategori:</strong> Minuman Kesihatan</p>
+            <p><strong>Bahan Utama:</strong> Kurma & Ashwagandha</p>
+            <p><strong>Asal:</strong> Produk Import</p>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Ciri-ciri Produk <span>›</span></button>
+        <div class="accordion-content">
+            <ul>
+                <li>Gabungan coklat premium dengan kurma asli</li>
+                <li>Mengandungi ekstrak herba Ashwagandha</li>
+                <li>Sesuai diminum setiap hari</li>
+                <li>Rasa enak dan mudah disediakan</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Kelebihan <span>›</span></button>
+        <div class="accordion-content">
+            <ul>
+                <li>Membantu meningkatkan tenaga harian</li>
+                <li>Sesuai untuk gaya hidup aktif</li>
+                <li>Boleh diminum panas atau sejuk</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Cara Penyediaan <span>›</span></button>
+        <div class="accordion-content">
+            <p>Campurkan 1 sachet ke dalam air panas atau suam, kacau sehingga sebati dan sedia diminum.</p>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Amaran <span>›</span></button>
+        <div class="accordion-content">
+            <p>Simpan di tempat kering dan sejuk. Elakkan pengambilan berlebihan. Rujuk doktor jika mempunyai masalah kesihatan.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SABUN ================= -->
+<div class="product-detail">
+    <div class="detail-header">Butiran Produk 🧼 Gadis & Jejaka</div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Spesifikasi Produk <span>›</span></button>
+        <div class="accordion-content">
+            <p><strong>Nama:</strong> Gadis & Jejaka Whitening Soap</p>
+            <p><strong>Jenis:</strong> Sabun Kecantikan</p>
+            <p><strong>Berat:</strong> ± 80g – 100g</p>
+            <p><strong>Kategori:</strong> Penjagaan Kulit</p>
+            <p><strong>Kegunaan:</strong> Pembersihan & Pencerahan Kulit</p>
+            <p><strong>Asal:</strong> Produk Viral</p>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Ciri-ciri Produk <span>›</span></button>
+        <div class="accordion-content">
+            <ul>
+                <li>Membantu membersihkan kulit secara mendalam</li>
+                <li>Membantu mencerahkan dan meratakan tona kulit</li>
+                <li>Sesuai untuk kegunaan harian</li>
+                <li>Tekstur lembut dan mudah berbuih</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Kelebihan <span>›</span></button>
+        <div class="accordion-content">
+            <ul>
+                <li>Membantu menanggalkan kotoran dan minyak</li>
+                <li>Memberikan rasa segar selepas penggunaan</li>
+                <li>Sesuai untuk lelaki dan wanita</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Cara Penggunaan <span>›</span></button>
+        <div class="accordion-content">
+            <p>Basahkan sabun, gosok sehingga berbuih dan sapukan pada kulit. Bilas dengan air bersih.</p>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">Amaran <span>›</span></button>
+        <div class="accordion-content">
+            <p>Elakkan terkena mata. Jika berlaku iritasi, hentikan penggunaan. Simpan di tempat kering.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach(acc => {
+    acc.querySelector(".accordion-btn").addEventListener("click", () => {
+        acc.classList.toggle("active");
+    });
+});
+</script>
+</body>
+  </html>
